@@ -1,19 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://csi0xg4y0ohya"]
+[gd_scene load_steps=5 format=3 uid="uid://csi0xg4y0ohya"]
 
 [ext_resource type="Script" path="res://src/scenes/Main.cs" id="1_62grp"]
+[ext_resource type="Script" path="res://src/controllers/TurnController.cs" id="2_airpf"]
 [ext_resource type="PackedScene" uid="uid://dj7j5irhbi7dg" path="res://src/character/Character.tscn" id="2_j253v"]
 [ext_resource type="TileSet" uid="uid://dyslgjo6nvw56" path="res://assets/resources/tile_set.tres" id="3_xe2rh"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_62grp")
 
+[node name="Controllers" type="Node" parent="."]
+
+[node name="TurnController" type="Node" parent="Controllers"]
+script = ExtResource("2_airpf")
+
 [node name="World" type="Node2D" parent="."]
 
-[node name="Player" parent="World" instance=ExtResource("2_j253v")]
+[node name="Characters" type="Node" parent="World"]
+
+[node name="Player" parent="World/Characters" instance=ExtResource("2_j253v")]
 modulate = Color(0.486275, 0.615686, 0.898039, 1)
 position = Vector2(32, 96)
 
-[node name="Enemy" parent="World" instance=ExtResource("2_j253v")]
+[node name="Enemy" parent="World/Characters" instance=ExtResource("2_j253v")]
 modulate = Color(0.901961, 0.482353, 0.454902, 1)
 position = Vector2(224, 160)
 

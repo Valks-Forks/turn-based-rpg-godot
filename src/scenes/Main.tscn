@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://csi0xg4y0ohya"]
+[gd_scene load_steps=7 format=3 uid="uid://csi0xg4y0ohya"]
 
 [ext_resource type="Script" path="res://src/scenes/Main.cs" id="1_62grp"]
 [ext_resource type="Script" path="res://src/controllers/TurnController.cs" id="2_airpf"]
 [ext_resource type="PackedScene" uid="uid://dj7j5irhbi7dg" path="res://src/character/Character.tscn" id="2_j253v"]
 [ext_resource type="Script" path="res://src/controllers/CameraController.cs" id="2_p7qkr"]
+[ext_resource type="Script" path="res://src/controllers/CharacterController.cs" id="3_vtj1r"]
 [ext_resource type="TileSet" uid="uid://dyslgjo6nvw56" path="res://assets/resources/tile_set.tres" id="3_xe2rh"]
 
 [node name="Main" type="Node"]
@@ -13,6 +14,9 @@ script = ExtResource("1_62grp")
 
 [node name="CameraController" type="Node" parent="Controllers"]
 script = ExtResource("2_p7qkr")
+
+[node name="CharacterController" type="Node" parent="Controllers"]
+script = ExtResource("3_vtj1r")
 
 [node name="TurnController" type="Node" parent="Controllers"]
 script = ExtResource("2_airpf")
@@ -31,6 +35,7 @@ position = Vector2(224, 160)
 
 [node name="Camera2D" type="Camera2D" parent="World"]
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="TileMap" type="TileMap" parent="World"]
 tile_set = ExtResource("3_xe2rh")

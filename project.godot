@@ -17,7 +17,3 @@ config/features=PackedStringArray("4.0", "C#", "Mobile")
 [dotnet]
 
 project/assembly_name="TurnBasedRPGGodot"
-
-[rendering]
-
-renderer/rendering_method="mobile"

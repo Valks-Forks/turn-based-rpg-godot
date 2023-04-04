@@ -1,10 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj7j5irhbi7dg"]
+[gd_scene load_steps=6 format=3 uid="uid://dj7j5irhbi7dg"]
 
 [ext_resource type="Script" path="res://src/character/Character.cs" id="1_8g6g4"]
+[ext_resource type="Script" path="res://src/character/Stat.cs" id="2_vkujj"]
 [ext_resource type="Texture2D" uid="uid://b5e6lqdebjssf" path="res://assets/textures/character.svg" id="2_volaf"]
+
+[sub_resource type="Resource" id="Resource_hrjb5"]
+script = ExtResource("2_vkujj")
+Value = 3
+MaxValue = 3
+
+[sub_resource type="Resource" id="Resource_6mppu"]
+script = ExtResource("2_vkujj")
+Value = 3
+MaxValue = 3
 
 [node name="Character" type="Node2D"]
 script = ExtResource("1_8g6g4")
+Stats = {
+"ActionPoints": SubResource("Resource_6mppu"),
+"HealthPoints": SubResource("Resource_hrjb5")
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

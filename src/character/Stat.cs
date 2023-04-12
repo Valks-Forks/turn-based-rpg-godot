@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Stat : Resource
+public partial class Stat : Node
 {
     [Signal]
     public delegate void ValueUpdatedEventHandler();

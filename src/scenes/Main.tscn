@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scenes/Main.cs" id="1_62grp"]
 [ext_resource type="Script" path="res://src/controllers/TurnController.cs" id="2_airpf"]
-[ext_resource type="PackedScene" uid="uid://dj7j5irhbi7dg" path="res://src/character/Character.tscn" id="2_j253v"]
+[ext_resource type="PackedScene" uid="uid://dhbpof78573" path="res://src/character/Character.tscn" id="2_j253v"]
 [ext_resource type="Script" path="res://src/controllers/CameraController.cs" id="2_p7qkr"]
 [ext_resource type="Script" path="res://src/controllers/CharacterController.cs" id="3_vtj1r"]
 [ext_resource type="TileSet" uid="uid://dyslgjo6nvw56" path="res://assets/resources/tile_set.tres" id="3_xe2rh"]
@@ -29,10 +29,6 @@ script = ExtResource("2_airpf")
 modulate = Color(0.486275, 0.615686, 0.898039, 1)
 position = Vector2(32, 96)
 
-[node name="HealthPoints" parent="World/Characters/Player/Stats" index="0"]
-Value = 5
-MaxValue = 5
-
 [node name="Enemy" parent="World/Characters" instance=ExtResource("2_j253v")]
 modulate = Color(0.901961, 0.482353, 0.454902, 1)
 position = Vector2(224, 160)
@@ -47,6 +43,3 @@ format = 2
 layer_0/name = "Floor"
 layer_0/z_index = -1
 layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 65539, 0, 0, 65538, 0, 0, 2, 0, 0, 1, 0, 0, 65537, 0, 0, 3, 0, 0, 196610, 0, 0, 196611, 0, 0, 196609, 0, 0, 196608, 0, 0)
-
-[editable path="World/Characters/Player"]
-[editable path="World/Characters/Enemy"]

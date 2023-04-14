@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://csi0xg4y0ohya"]
+[gd_scene load_steps=8 format=3 uid="uid://csi0xg4y0ohya"]
 
 [ext_resource type="Script" path="res://src/scenes/Main.cs" id="1_62grp"]
 [ext_resource type="Script" path="res://src/controllers/TurnController.cs" id="2_airpf"]
-[ext_resource type="PackedScene" uid="uid://dhbpof78573" path="res://src/character/Character.tscn" id="2_j253v"]
+[ext_resource type="PackedScene" uid="uid://bq78eqy1h2bm6" path="res://src/character/Character.tscn" id="2_j253v"]
 [ext_resource type="Script" path="res://src/controllers/CameraController.cs" id="2_p7qkr"]
+[ext_resource type="Script" path="res://src/controllers/ActionController.cs" id="2_th8w5"]
 [ext_resource type="Script" path="res://src/controllers/CharacterController.cs" id="3_vtj1r"]
 [ext_resource type="TileSet" uid="uid://dyslgjo6nvw56" path="res://assets/resources/tile_set.tres" id="3_xe2rh"]
 
@@ -11,6 +12,9 @@
 script = ExtResource("1_62grp")
 
 [node name="Controllers" type="Node" parent="."]
+
+[node name="ActionController" type="Node" parent="Controllers"]
+script = ExtResource("2_th8w5")
 
 [node name="CameraController" type="Node" parent="Controllers"]
 script = ExtResource("2_p7qkr")
@@ -42,4 +46,11 @@ tile_set = ExtResource("3_xe2rh")
 format = 2
 layer_0/name = "Floor"
 layer_0/z_index = -1
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 65539, 0, 0, 65538, 0, 0, 2, 0, 0, 1, 0, 0, 65537, 0, 0, 3, 0, 0, 196610, 0, 0, 196611, 0, 0, 196609, 0, 0, 196608, 0, 0)
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 196610, 0, 0, 196611, 0, 0, 196609, 0, 0, 196608, 0, 0, 65537, 0, 0, 1, 0, 0, 2, 0, 0, 65538, 0, 0, 3, 0, 0, 65539, 0, 0)
+layer_1/name = "Action"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()

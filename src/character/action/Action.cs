@@ -4,6 +4,9 @@ using Godot.Collections;
 public abstract partial class Action : Node
 {
     [Export]
+    public Range Range;
+
+    [Export]
     private int _cost;
 
     public abstract void Do(ActionProperties properties);

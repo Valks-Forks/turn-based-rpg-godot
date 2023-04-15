@@ -1,8 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b83gcqei66fub"]
-
-[ext_resource type="Script" path="res://src/character/Stat.cs" id="1_tdw1n"]
-
-[resource]
-script = ExtResource("1_tdw1n")
-Value = 3
-MaxValue = 3

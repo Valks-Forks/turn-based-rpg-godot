@@ -1,7 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cxwjtgli2ksby"]
-
-[ext_resource type="Script" path="res://src/character/action/ranges/LineRange.cs" id="1_ak1ib"]
-
-[resource]
-script = ExtResource("1_ak1ib")
-Value = 1

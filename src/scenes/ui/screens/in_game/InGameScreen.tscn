@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://wfhgd35pyars"]
+
+[ext_resource type="Script" path="res://src/scenes/ui/screens/in_game/InGameScreen.cs" id="1_jn00n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fatlj"]
+font_size = 32
+
+[node name="InGameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jn00n")
+
+[node name="GameMenu" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameMenu"]
+layout_mode = 2
+text = "Game Menu"
+label_settings = SubResource("LabelSettings_fatlj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="GameMenu"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Continue"
+
+[node name="LoadGameButton" type="Button" parent="GameMenu"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Load Game"
+
+[node name="ExitButton" type="Button" parent="GameMenu"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Exit"
+
+[connection signal="pressed" from="GameMenu/ContinueButton" to="." method="onContinueButtonPressed"]
+[connection signal="pressed" from="GameMenu/LoadGameButton" to="." method="onLoadGameButtonPressed"]
+[connection signal="pressed" from="GameMenu/ExitButton" to="." method="onExitButtonPressed"]

@@ -3,6 +3,7 @@ using Godot;
 public partial class LoadGameScreen : Screen
 {
     private PackedScene _loadGameButton = GD.Load<PackedScene>("res://src/scenes/ui/screens/load_game/LoadGameButton.tscn");
+    private PackedScene _inGameScreen = GD.Load<PackedScene>("res://src/scenes/ui/screens/in_game/InGameScreen.tscn");
 
     public override void _Ready()
     {
@@ -41,13 +42,34 @@ public partial class LoadGameScreen : Screen
 
     private void onLoadGameButtonPressed(GameData gameData)
     {
-        GD.Print($"LoadGameScreen: loading game data ({gameData.ResourceName})");
+        GD.Print($"LoadController: loading game ({gameData.ResourceName})");
+        Node existingWorld = GetTree().GetFirstNodeInGroup("World");
+
+        if (existingWorld != null)
+        {
+            existingWorld.QueueFree();
+        }
+
+        PackedScene world = GD.Load<PackedScene>($"res://src/scenes/world/worlds/{gameData.World}.tscn");
+        Node2D worldInstance = world.Instantiate<Node2D>();
+
+        // load character
+        PackedScene character = GD.Load<PackedScene>("res://src/character/Character.tscn");
+        Node2D characterInstance = character.Instantiate<Node2D>();
+        characterInstance.GetNode<Sprite2D>("Sprite2D").Modulate = gameData.CharacterData.Color;
+        characterInstance.Position = gameData.CharacterData.Position;
+
+        // add character to world
+        worldInstance.AddChild(characterInstance);
+        GetNode("/root/Main").AddChild(worldInstance);
+
+        // add in game screen to ui
+        GetNode<UI>("/root/Main/UI").SetScreen(_inGameScreen.Instantiate<InGameScreen>());
     }
 
     private void onLoadGameButtonDeletePressed(GameData gameData)
     {
         GD.Print($"LoadGameScreen: deleting game ({gameData.ResourceName})");
-
         DirAccess.RemoveAbsolute(gameData.ResourcePath);
         UI.Refresh();
     }

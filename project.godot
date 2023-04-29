@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.0", "C#", "Mobile")
 
 UIController="*res://src/autoload/UIController.cs"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="TurnBasedRPGGodot"

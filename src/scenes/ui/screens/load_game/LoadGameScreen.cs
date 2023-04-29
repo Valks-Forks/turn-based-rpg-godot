@@ -56,6 +56,7 @@ public partial class LoadGameScreen : Screen
         PackedScene character = GD.Load<PackedScene>("res://src/character/Character.tscn");
         Node2D characterInstance = character.Instantiate<Node2D>();
         characterInstance.GetNode<Sprite2D>("Sprite2D").Modulate = gameData.CharacterData.Color;
+        characterInstance.GetNode<Sprite2D>("Sprite2D").Texture = gameData.CharacterData.Texture;
         characterInstance.Position = gameData.CharacterData.Position;
 
         // add character to world

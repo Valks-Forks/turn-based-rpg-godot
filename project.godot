@@ -14,6 +14,10 @@ config/name="TurnBasedRPGGodot"
 run/main_scene="res://src/scenes/Main.tscn"
 config/features=PackedStringArray("4.0", "C#", "Mobile")
 
+[autoload]
+
+UIController="*res://src/autoload/UIController.cs"
+
 [dotnet]
 
 project/assembly_name="TurnBasedRPGGodot"

@@ -3,7 +3,6 @@ using Godot;
 public partial class LoadGameScreen : Screen
 {
     private PackedScene _loadGameButton = GD.Load<PackedScene>("res://src/scenes/ui/screens/load_game/LoadGameButton.tscn");
-    private PackedScene _inGameScreen = GD.Load<PackedScene>("res://src/scenes/ui/screens/in_game/InGameScreen.tscn");
 
     public override void _Ready()
     {
@@ -37,12 +36,12 @@ public partial class LoadGameScreen : Screen
 
     private void onBackButtonPressed()
     {
-        UI.Back();
+        UIController.Back();
     }
 
     private void onLoadGameButtonPressed(GameData gameData)
     {
-        GD.Print($"LoadController: loading game ({gameData.ResourceName})");
+        GD.Print($"LoadGameScreen: loading game ({gameData.ResourceName})");
         Node existingWorld = GetTree().GetFirstNodeInGroup("World");
 
         if (existingWorld != null)
@@ -64,13 +63,13 @@ public partial class LoadGameScreen : Screen
         GetNode("/root/Main").AddChild(worldInstance);
 
         // add in game screen to ui
-        GetNode<UI>("/root/Main/UI").SetScreen(_inGameScreen.Instantiate<InGameScreen>());
+        UIController.SetScreen("InGame");
     }
 
     private void onLoadGameButtonDeletePressed(GameData gameData)
     {
         GD.Print($"LoadGameScreen: deleting game ({gameData.ResourceName})");
         DirAccess.RemoveAbsolute(gameData.ResourcePath);
-        UI.Refresh();
+        UIController.Refresh();
     }
 }

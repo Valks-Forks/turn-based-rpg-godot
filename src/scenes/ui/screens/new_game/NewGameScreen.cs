@@ -4,7 +4,7 @@ public partial class NewGameScreen : Screen
 {
     private void onBackButtonPressed()
     {
-        UI.Back();
+        UIController.Back();
     }
 
     private void onSaveButtonPressed()
@@ -14,7 +14,7 @@ public partial class NewGameScreen : Screen
         ResourceSaver.Save(gameData, $"data/game_data/{gameData.ResourceName}.tres");
 
         // todo: remove UI.Back(), start game here using newly created game data
-        UI.Back();
+        UIController.Back();
 
         GD.Print($"NewGameScreen: created new game ({gameData.ResourceName})");
     }

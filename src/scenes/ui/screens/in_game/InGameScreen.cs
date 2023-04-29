@@ -1,10 +1,7 @@
 using Godot;
-using System;
 
 public partial class InGameScreen : Screen
 {
-    private PackedScene _loadGameScreen = GD.Load<PackedScene>("res://src/scenes/ui/screens/load_game/LoadGameScreen.tscn");
-    private PackedScene _mainMenuScreen = GD.Load<PackedScene>("res://src/scenes/ui/screens/main_menu/MainMenuScreen.tscn");
     private Control _gameMenu;
 
     public override void _Ready()
@@ -30,11 +27,11 @@ public partial class InGameScreen : Screen
     private void onExitButtonPressed()
     {
         GetTree().GetFirstNodeInGroup("World").QueueFree();
-        UI.SetScreen(_mainMenuScreen.Instantiate<Screen>());
+        UIController.SetScreen("MainMenu");
     }
 
     private void onLoadGameButtonPressed()
     {
-        UI.SetScreen(_loadGameScreen.Instantiate<Screen>());
+        UIController.SetScreen("LoadGame");
     }
 }

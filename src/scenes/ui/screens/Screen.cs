@@ -2,11 +2,11 @@ using Godot;
 
 public partial class Screen : Control
 {
-    protected UI UI;
+    protected UIController UIController;
 
     public override void _Ready()
     {
-        UI = GetNode<UI>("/root/Main/UI");
+        UIController = GetNode<UIController>("/root/UIController");
     }
 
     public virtual void Refresh()

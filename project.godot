@@ -16,7 +16,9 @@ config/features=PackedStringArray("4.0", "C#", "Mobile")
 
 [autoload]
 
+CharacterController="*res://src/autoload/CharacterController.cs"
 UIController="*res://src/autoload/UIController.cs"
+GameDataController="*res://src/autoload/GameDataController.cs"
 
 [display]
 

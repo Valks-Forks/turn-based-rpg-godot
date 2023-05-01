@@ -24,6 +24,11 @@ public partial class InGameScreen : Screen
         _gameMenu.Visible = false;
     }
 
+    private void onSaveButtonPressed()
+    {
+        GetNode<GameDataController>("/root/GameDataController").SaveGame();
+    }
+
     private void onExitButtonPressed()
     {
         GetTree().GetFirstNodeInGroup("World").QueueFree();

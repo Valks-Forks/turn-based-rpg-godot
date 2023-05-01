@@ -37,6 +37,12 @@ layout_mode = 2
 size_flags_horizontal = 6
 text = "Continue"
 
+[node name="SaveGameButton" type="Button" parent="GameMenu"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Save Game"
+
 [node name="LoadGameButton" type="Button" parent="GameMenu"]
 custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
@@ -50,5 +56,6 @@ size_flags_horizontal = 6
 text = "Exit"
 
 [connection signal="pressed" from="GameMenu/ContinueButton" to="." method="onContinueButtonPressed"]
+[connection signal="pressed" from="GameMenu/SaveGameButton" to="." method="onSaveButtonPressed"]
 [connection signal="pressed" from="GameMenu/LoadGameButton" to="." method="onLoadGameButtonPressed"]
 [connection signal="pressed" from="GameMenu/ExitButton" to="." method="onExitButtonPressed"]

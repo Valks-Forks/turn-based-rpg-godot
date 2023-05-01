@@ -46,12 +46,12 @@ public partial class NewGameScreen : Screen
     private void onSaveButtonPressed()
     {
         _gameData.ResourceName = GetNode<LineEdit>("Layout/Name").Text;
-        ResourceSaver.Save(_gameData, $"data/game_data/{_gameData.ResourceName}.tres");
-
-        // todo: remove UI.Back(), start game here using newly created game data
-        UIController.Back();
-
+        _gameData.ResourcePath = $"data/game_data/{_gameData.ResourceName}.tres";
+        ResourceSaver.Save(_gameData, _gameData.ResourcePath);
         GD.Print($"NewGameScreen: created new game ({_gameData.ResourceName})");
+
+        // load newly created game data
+        GetNode<GameDataController>("/root/GameDataController").LoadGame(_gameData);
     }
 
     private void onCharacterTextureBackButtonPressed()
@@ -78,7 +78,7 @@ public partial class NewGameScreen : Screen
         updateCharacterTexture();
     }
 
-    private void onColorPickerColorChanged(Color color)
+    private void onCharacterColorPickerColorChanged(Color color)
     {
         _gameData.CharacterData.Color = color;
         _characterTexture.Modulate = color;

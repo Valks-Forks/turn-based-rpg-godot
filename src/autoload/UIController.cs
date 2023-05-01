@@ -1,4 +1,5 @@
-using Godot;
+namespace TurnBasedRPG;
+
 using Godot.Collections;
 using System.Collections;
 

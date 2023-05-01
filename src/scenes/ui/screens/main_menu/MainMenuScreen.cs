@@ -1,3 +1,5 @@
+namespace TurnBasedRPG;
+
 public partial class MainMenuScreen : Screen
 {
     private void onLoadGameButtonPressed()

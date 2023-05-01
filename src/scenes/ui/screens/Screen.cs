@@ -1,4 +1,4 @@
-using Godot;
+namespace TurnBasedRPG;
 
 public partial class Screen : Control
 {

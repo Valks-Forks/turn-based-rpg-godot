@@ -3,3 +3,6 @@
 
 # User data specific ignores
 /data/
+
+# Mono Specific Ignores
+.vs/

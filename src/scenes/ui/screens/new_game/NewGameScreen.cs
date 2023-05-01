@@ -14,9 +14,9 @@ public partial class NewGameScreen : Screen
         base._Ready();
 
         _characterTexture = GetNode<TextureRect>("Layout/CharacterTextureLayout/CharacterTexture");
-        string characterTexturesPath = "res://assets/textures/characters";
+        var characterTexturesPath = "res://assets/textures/characters";
 
-        foreach (string characterTextureFile in DirAccess.GetFilesAt(characterTexturesPath)) {
+        foreach (var characterTextureFile in DirAccess.GetFilesAt(characterTexturesPath)) {
             if (!characterTextureFile.EndsWith(".svg"))
             {
                 continue;

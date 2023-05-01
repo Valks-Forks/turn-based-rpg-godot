@@ -13,7 +13,7 @@ public partial class GameDataController : Node
         GD.Print($"GameDataController: loading game ({gameData.ResourceName})");
 
         _activeGameData = gameData;
-        Node existingWorld = GetTree().GetFirstNodeInGroup("World");
+        var existingWorld = GetTree().GetFirstNodeInGroup("World");
 
         if (existingWorld != null)
         {
@@ -21,11 +21,11 @@ public partial class GameDataController : Node
             await ToSignal(existingWorld, "tree_exited");
         }
 
-        PackedScene world = GD.Load<PackedScene>($"res://src/scenes/world/worlds/{gameData.World}.tscn");
-        Node2D worldInstance = world.Instantiate<Node2D>();
+        var world = GD.Load<PackedScene>($"res://src/scenes/world/worlds/{gameData.World}.tscn");
+        var worldInstance = world.Instantiate<Node2D>();
 
         // load character
-        PackedScene character = GD.Load<PackedScene>("res://src/character/Character.tscn");
+        var character = GD.Load<PackedScene>("res://src/character/Character.tscn");
         _activeCharacter = character.Instantiate<Character>();
         _activeCharacter.GetNode<Sprite2D>("Sprite2D").Modulate = gameData.CharacterData.Color;
         _activeCharacter.GetNode<Sprite2D>("Sprite2D").Texture = gameData.CharacterData.Texture;

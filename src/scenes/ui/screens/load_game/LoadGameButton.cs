@@ -14,8 +14,8 @@ public partial class LoadGameButton : Control
     {
         GetNode<Label>("Title").Text = GameData.ResourceName;
 
-        long modifiedTime = (long)FileAccess.GetModifiedTime(GameData.ResourcePath);
-        string date = Time.GetDatetimeStringFromUnixTime(modifiedTime);
+        var modifiedTime = (long)FileAccess.GetModifiedTime(GameData.ResourcePath);
+        var date = Time.GetDatetimeStringFromUnixTime(modifiedTime);
         date = date.Replace("T", " ");
         GetNode<Label>("Date").Text = date;
     }

@@ -6,8 +6,8 @@ using System.Collections;
 public partial class UIController : Node
 {
     private Screen _activeScreen;
-    private Stack _screenStack = new Stack();
-    private Dictionary<string, PackedScene> _screens = new Dictionary<string, PackedScene>()
+    private Stack _screenStack = new();
+    private Dictionary<string, PackedScene> _screens = new()
     {
         {"MainMenu", GD.Load<PackedScene>("res://src/scenes/ui/screens/main_menu/MainMenuScreen.tscn")},
         {"NewGame", GD.Load<PackedScene>("res://src/scenes/ui/screens/new_game/NewGameScreen.tscn")},

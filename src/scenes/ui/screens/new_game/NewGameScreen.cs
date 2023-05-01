@@ -6,8 +6,8 @@ public partial class NewGameScreen : Screen
 {
     private TextureRect _characterTexture;
     private int _characterTextureIndex = 0;
-    private Array<Texture2D> _characterTextures = new Array<Texture2D>();
-    private GameData _gameData = new GameData();
+    private Array<Texture2D> _characterTextures = new();
+    private GameData _gameData = new();
 
     public override void _Ready()
     {

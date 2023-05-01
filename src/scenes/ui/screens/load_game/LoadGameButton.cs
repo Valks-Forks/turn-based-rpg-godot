@@ -8,7 +8,7 @@ public partial class LoadGameButton : Control
     [Signal]
     public delegate void PressedEventHandler(GameData gameData);
 
-    public GameData GameData = new GameData();
+    public GameData GameData = new();
 
     public override void _Ready()
     {

@@ -20,8 +20,6 @@ public partial class CharacterController : Node
         // PrimaryAction in Battle - Do Action
     }
 
-    private void onGameDataControllerGameLoaded()
-    {
+    private void onGameDataControllerGameLoaded() =>
         _activeCharacter = GetNode<Character>("/root/Main/World/Character");
-    }
 }

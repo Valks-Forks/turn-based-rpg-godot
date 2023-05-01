@@ -10,10 +10,7 @@ public partial class LoadGameScreen : Screen
         setupLoadGameButtons();
     }
 
-    public override void Refresh()
-    {
-        setupLoadGameButtons();
-    }
+    public override void Refresh() => setupLoadGameButtons();
 
     private void setupLoadGameButtons()
     {
@@ -34,15 +31,10 @@ public partial class LoadGameScreen : Screen
         }
     }
 
-    private void onBackButtonPressed()
-    {
-        UIController.Back();
-    }
+    private void onBackButtonPressed() => UIController.Back();
 
-    private void onLoadGameButtonPressed(GameData gameData)
-    {
+    private void onLoadGameButtonPressed(GameData gameData) =>
         GetNode<GameDataController>("/root/GameDataController").LoadGame(gameData);
-    }
 
     private void onLoadGameButtonDeletePressed(GameData gameData)
     {

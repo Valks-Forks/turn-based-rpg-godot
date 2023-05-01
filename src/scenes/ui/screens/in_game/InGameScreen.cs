@@ -19,15 +19,10 @@ public partial class InGameScreen : Screen
         }
     }
 
-    private void onContinueButtonPressed()
-    {
-        _gameMenu.Visible = false;
-    }
+    private void onContinueButtonPressed() => _gameMenu.Visible = false;
 
-    private void onSaveButtonPressed()
-    {
+    private void onSaveButtonPressed() =>
         GetNode<GameDataController>("/root/GameDataController").SaveGame();
-    }
 
     private void onExitButtonPressed()
     {
@@ -35,8 +30,5 @@ public partial class InGameScreen : Screen
         UIController.SetScreen("MainMenu");
     }
 
-    private void onLoadGameButtonPressed()
-    {
-        UIController.SetScreen("LoadGame");
-    }
+    private void onLoadGameButtonPressed() => UIController.SetScreen("LoadGame");
 }

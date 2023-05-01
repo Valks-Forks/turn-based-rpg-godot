@@ -20,13 +20,9 @@ public partial class LoadGameButton : Control
         GetNode<Label>("Date").Text = date;
     }
 
-    private void onButtonPressed()
-    {
+    private void onButtonPressed() =>
         EmitSignal(nameof(Pressed), GameData);
-    }
 
-    private void onDeleteButtonPressed()
-    {
+    private void onDeleteButtonPressed() =>
         EmitSignal(nameof(DeletePressed), GameData);
-    }
 }

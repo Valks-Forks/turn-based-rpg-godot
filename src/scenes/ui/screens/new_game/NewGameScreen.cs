@@ -39,10 +39,7 @@ public partial class NewGameScreen : Screen
         _gameData.CharacterData.Texture = _characterTextures[_characterTextureIndex];
     }
 
-    private void onBackButtonPressed()
-    {
-        UIController.Back();
-    }
+    private void onBackButtonPressed() => UIController.Back();
 
     private void onSaveButtonPressed()
     {
